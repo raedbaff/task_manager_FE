@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    image: raed980/task-manager:1.0.0
+    container_name: task-manager-be
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+
+  frontend:
+    image: raed980/task_manager_fe:1.0.0
+    container_name: task-manager-fe
+    restart: unless-stopped
+    ports:
+      - "5173:80"

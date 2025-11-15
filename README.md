@@ -34,7 +34,14 @@ cd task_manager_FE
 
 ## Run Options
 ### Option 1: Run with Docker Compose (Recommened)
-The project already includes a `docker-compose.yml` file. You **do not need to build anything** — the Docker image is public on Docker Hub.  
+The project already includes a `docker-compose.yml` file. You **do not need to build anything** — the Docker image is public on Docker Hub. 
+
+For convenience, this project includes a **single Docker Compose setup** that runs:
+
+- The frontend React app
+- The backend Spring Boot API
+
+You do **not** need to clone or run the backend repository separately — both services are pulled automatically from Docker Hub.  
 
 To run the app:
 1. Make sure Docker and Docker Compose are installed. 
