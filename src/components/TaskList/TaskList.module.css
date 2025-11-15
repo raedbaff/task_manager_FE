@@ -3,6 +3,12 @@
   flex-direction: column;
   gap: 1rem;
 }
+.loadingState {
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .emptyState {
   text-align: center;

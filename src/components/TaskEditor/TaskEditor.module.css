@@ -1,21 +1,74 @@
-
-
-.inputGroup {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 30rem;
+  height: 25rem;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+.inputGroup {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.inputGroup h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.error {
+  color: #dc2626;
+  font-size: 0.9rem;
+  font-weight: bold;
+  align-self: flex-start;
+}
 .input {
-  flex: 1;
-  min-width: 200px;
+  width: 100%;
   padding: 1rem 1.5rem;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
   outline: none;
+}
+.textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+  min-height: 150px;
+  resize: vertical;
+}
+
+.textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .input:focus {
@@ -37,8 +90,12 @@
 .select:focus {
   border-color: #667eea;
 }
-
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
 .addButton {
+  margin: auto;
   padding: 1rem 2rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
@@ -50,7 +107,27 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+.cancelButton {
+  margin: auto;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #580c0c 0%, #f11909 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
@@ -58,7 +135,13 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
-
+.cancelButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
 .addButton:active {
+  transform: translateY(0);
+}
+.cancelButton:active {
   transform: translateY(0);
 }

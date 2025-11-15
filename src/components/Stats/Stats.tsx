@@ -1,13 +1,13 @@
 import type { Task } from "../../types/Task";
-import styles from "./Stats.module.css"
+import styles from "./Stats.module.css";
 interface Props {
-    tasks: Task[]
+  tasks: Task[];
 }
 const Stats = ({ tasks }: Props) => {
   const stats = {
     total: tasks.length,
-    active: tasks.filter(t => !t.completed).length,
-    completed: tasks.filter(t => t.completed).length
+    active: tasks.filter((t) => !t.completed).length,
+    completed: tasks.filter((t) => t.completed).length,
   };
 
   return (
@@ -28,4 +28,4 @@ const Stats = ({ tasks }: Props) => {
   );
 };
 
-export default Stats
+export default Stats;

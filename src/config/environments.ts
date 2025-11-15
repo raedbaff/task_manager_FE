@@ -7,12 +7,12 @@ export interface IEnvironemnt {
 
 export const localdev: IEnvironemnt = {
   env_name: "localdev",
-  apiBaseUrl: "https://ltm-dev.inrits.tech/api/v1",
+  apiBaseUrl: import.meta.env.VITE_BE_URL,
 };
 
 export const staging: IEnvironemnt = {
   env_name: "staging",
-  apiBaseUrl: "https://ltm-staging.inrits.tech/api/v1",
+  apiBaseUrl: import.meta.env.VITE_BE_URL,
 };
 
 export const getCurrentEnvironment = (): IEnvironemnt => {

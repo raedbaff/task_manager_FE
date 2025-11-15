@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Task Manager — React Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **React** application for managing tasks.  
+Connects to a REST API backend (e.g., Spring Boot).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Create, read, update, delete tasks  
+- Input validation using React Hook Form  
+- Responsive UI  
+- Clean component structure  
+- Uses lucide-react icons  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v18+)  
+- npm or yarn  
+- A running backend API  
+  - Default backend URL: `http://localhost:8080`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Note:** Make sure the backend is running first, you can follow the guide right here [backend](https://github.com/raedbaff/task_manager_BE/tree/main).
+```bash
+git clone https://github.com/raedbaff/task_manager_FE.git
+cd task_manager_FE
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Run Options
+### Option 1: Run with Docker Compose (Recommened)
+The project already includes a `docker-compose.yml` file. You **do not need to build anything** — the Docker image is public on Docker Hub.  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To run the app:
+1. Make sure Docker and Docker Compose are installed. 
+2. In the project root, run:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+docker-compose up -d
 ```
+3. Access the App:
+- http://localhost:5173
+
+### Option 2: Run Normally (without Docker)
+1. Install dependencies:
+
+```bash
+npm install
+```
+2. Create .env file 
+```bash
+VITE_BE_URL="http://localhost:8080"
+```
+3. Run the application:
+```bash
+npm run dev
+```
+4. Access the App:
+- http://localhost:5173
